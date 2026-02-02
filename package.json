@@ -1,0 +1,34 @@
+{
+  "name": "@captchacat/angular",
+  "version": "0.1.0",
+  "description": "Angular integration for Captchacat",
+  "author": "Captchacat",
+  "homepage": "https://captchacat.com",
+  "peerDependencies": {
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "ng-packagr": "^17.0.0",
+    "typescript": "~5.2.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "captcha",
+    "captchacat",
+    "angular",
+    "bot-detection"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Captchacat-Integrations/Angular"
+  }
+}
