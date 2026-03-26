@@ -1,14 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CaptchacatComponent } from '@captchacat/angular';
+import { ByebotComponent } from '@byebot/angular';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, CaptchacatComponent],
+  imports: [FormsModule, ByebotComponent],
   template: `
     <main class="main">
-      <h1 class="page-title">Captchacat - Angular Demo</h1>
+      <h1 class="page-title">Byebot - Angular Demo</h1>
 
       <div class="container">
         <form (ngSubmit)="handleSubmit()" class="form">
@@ -29,7 +29,7 @@ import { CaptchacatComponent } from '@captchacat/angular';
             class="input"
           />
 
-          <captchacat [siteKey]="'bd1cc81b04564d3f899e'" (verified)="handleVerify($event)" />
+          <byebot [siteKey]="'bd1cc81b04564d3f899e'" (verified)="handleVerify($event)" />
 
           <div class="status-row">
             <span class="status-dot" [class.verified]="isVerified()"></span>

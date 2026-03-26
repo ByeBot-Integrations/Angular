@@ -12,11 +12,11 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-const BASE_URL = 'https://challenge.captchacat.com';
+const BASE_URL = 'https://challenge.byebot.de';
 
 declare global {
   interface Window {
-    Captchacat?: {
+    Byebot?: {
       render: (container?: HTMLElement) => void;
     };
     [key: string]: unknown;
@@ -24,7 +24,7 @@ declare global {
 }
 
 @Component({
-  selector: 'captchacat',
+  selector: 'byebot',
   standalone: true,
   template: `
     <div
@@ -36,7 +36,7 @@ declare global {
     ></div>
   `,
 })
-export class CaptchacatComponent implements AfterViewInit, OnDestroy {
+export class ByebotComponent implements AfterViewInit, OnDestroy {
   @Input({ required: true }) siteKey!: string;
   @Output() verified = new EventEmitter<string>();
 
@@ -53,7 +53,7 @@ export class CaptchacatComponent implements AfterViewInit, OnDestroy {
     if (!this.isBrowser) return;
 
     // Generate unique callback name
-    this.callbackName = `captchacat_cb_${Math.random().toString(36).substring(7)}`;
+    this.callbackName = `byebot_cb_${Math.random().toString(36).substring(7)}`;
 
     // Register callback on window
     (window as Window)[this.callbackName] = (token: string) => {
@@ -70,8 +70,8 @@ export class CaptchacatComponent implements AfterViewInit, OnDestroy {
     const scriptUrl = `${BASE_URL}/ray/widget.js`;
 
     const handleInit = () => {
-      if (window.Captchacat?.render && this.containerRef?.nativeElement) {
-        window.Captchacat.render(this.containerRef.nativeElement);
+      if (window.Byebot?.render && this.containerRef?.nativeElement) {
+        window.Byebot.render(this.containerRef.nativeElement);
       }
     };
 
@@ -86,7 +86,7 @@ export class CaptchacatComponent implements AfterViewInit, OnDestroy {
       document.body.appendChild(script);
     } else {
       // Script exists - check if already loaded
-      if (window.Captchacat) {
+      if (window.Byebot) {
         handleInit();
       } else {
         script.addEventListener('load', handleInit);

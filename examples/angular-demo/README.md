@@ -1,6 +1,6 @@
 # Angular Demo
 
-Example Angular app using `@captchacat/angular`.
+Example Angular app using `@byebot/angular`.
 
 ## Run
 
@@ -22,7 +22,7 @@ Open [http://localhost:4200](http://localhost:4200)
 
 ```
 src/app/
-├── app.component.ts      # Form with Captchacat component
+├── app.component.ts      # Form with Byebot component
 ├── app.config.ts         # App configuration
 └── main.ts               # Bootstrap
 ```

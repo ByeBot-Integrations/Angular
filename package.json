@@ -1,9 +1,9 @@
 {
-  "name": "@captchacat/angular",
-  "version": "0.1.0",
-  "description": "Angular integration for Captchacat",
-  "author": "Captchacat",
-  "homepage": "https://captchacat.com",
+  "name": "@byebot/angular",
+  "version": "1.0.0",
+  "description": "Angular integration for Byebot",
+  "author": "Byebot",
+  "homepage": "https://byebot.de",
   "peerDependencies": {
     "@angular/common": ">=17.0.0",
     "@angular/core": ">=17.0.0"
@@ -22,13 +22,13 @@
   },
   "keywords": [
     "captcha",
-    "captchacat",
+    "byebot",
     "angular",
     "bot-detection"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Captchacat-Integrations/Angular"
+    "url": "https://github.com/ByeBot-Integrations/Angular"
   }
 }

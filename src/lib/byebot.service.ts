@@ -10,15 +10,15 @@ export interface ValidationOptions {
 }
 
 /**
- * Validates the Captchacat token server-side.
+ * Validates the Byebot token server-side.
  */
-export async function validateCaptchacatToken(
+export async function validateByebotToken(
   options: ValidationOptions
 ): Promise<ValidationResponse> {
   const { apiKey, token } = options;
 
   try {
-    const response = await fetch('https://challenge.captchacat.com/validate_token', {
+    const response = await fetch('https://challenge.byebot.de/validate_token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

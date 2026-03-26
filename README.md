@@ -1,13 +1,13 @@
-# @captchacat/angular
+# @byebot/angular
 
-Angular integration for Captchacat.
+Angular integration for Byebot.
 
-GitHub: https://github.com/Captchacat-Integrations/Angular
+GitHub: https://github.com/ByeBot-Integrations/Angular
 
 ## Installation
 
 ```bash
-npm install @captchacat/angular
+npm install @byebot/angular
 ```
 
 ## Usage
@@ -15,29 +15,29 @@ npm install @captchacat/angular
 ### Standalone Component (Recommended)
 
 ```typescript
-import { Component } from '@angular/core';
-import { CaptchacatComponent } from '@captchacat/angular';
+import { Component } from "@angular/core";
+import { ByebotComponent } from "@byebot/angular";
 
 @Component({
-  selector: 'app-login',
+  selector: "app-login",
   standalone: true,
-  imports: [CaptchacatComponent],
+  imports: [ByebotComponent],
   template: `
     <form (ngSubmit)="onSubmit()">
       <input name="email" type="email" />
       <input name="password" type="password" />
-      <captchacat [siteKey]="'your-site-key'" (verified)="onVerify($event)" />
+      <byebot [siteKey]="'your-site-key'" (verified)="onVerify($event)" />
       <button type="submit">Login</button>
     </form>
-  `
+  `,
 })
 export class LoginComponent {
   onVerify(token: string) {
-    console.log('Verified:', token);
+    console.log("Verified:", token);
   }
 
   onSubmit() {
-    // Token is automatically added as hidden 'captchacat-token' field
+    // Token is automatically added as hidden 'byebot-token' field
   }
 }
 ```
@@ -45,11 +45,11 @@ export class LoginComponent {
 ### With NgModule
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { CaptchacatModule } from '@captchacat/angular';
+import { NgModule } from "@angular/core";
+import { ByebotModule } from "@byebot/angular";
 
 @NgModule({
-  imports: [CaptchacatModule],
+  imports: [ByebotModule],
 })
 export class AppModule {}
 ```
@@ -57,23 +57,23 @@ export class AppModule {}
 ## Server-Side Validation
 
 ```typescript
-import { validateCaptchacatToken } from '@captchacat/angular';
+import { validateByebotToken } from "@byebot/angular";
 
 async function validateCaptcha(token: string) {
-  const result = await validateCaptchacatToken({
-    apiKey: process.env.CAPTCHACAT_API_KEY!,
+  const result = await validateByebotToken({
+    apiKey: process.env.BYEBOT_API_KEY!,
     token,
   });
 
   if (!result.valid) {
-    throw new Error('Captcha validation failed');
+    throw new Error("Captcha validation failed");
   }
 }
 ```
 
 ## API
 
-### `<captchacat>`
+### `<byebot>`
 
 | Input     | Type     | Required | Description                      |
 | --------- | -------- | -------- | -------------------------------- |
@@ -83,7 +83,7 @@ async function validateCaptcha(token: string) {
 | ---------- | ---------------------- | -------------------------------------- |
 | `verified` | `EventEmitter<string>` | Emits token when verification succeeds |
 
-### `validateCaptchacatToken(options)`
+### `validateByebotToken(options)`
 
 | Option   | Type     | Required |
 | -------- | -------- | -------- |
